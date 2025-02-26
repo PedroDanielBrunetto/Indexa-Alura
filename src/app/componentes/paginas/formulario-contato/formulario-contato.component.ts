@@ -11,7 +11,7 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
   styleUrl: './formulario-contato.component.css',
 })
 export class FormularioContatoComponent {
-  contatoForm!: FormGroup;
+  contatoForm: FormGroup;
 
   constructor() {
     this.contatoForm = new FormGroup({
@@ -22,5 +22,13 @@ export class FormularioContatoComponent {
       redes: new FormControl(''),
       observacoes: new FormControl(''),
     });
+  }
+
+  salvarContato() {
+    console.log(this.contatoForm.value);
+  }
+
+  cancelar() {
+    console.log('Ação cancelada');
   }
 }
