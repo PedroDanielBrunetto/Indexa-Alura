@@ -8,6 +8,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-formulario-contato',
@@ -22,6 +23,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './formulario-contato.component.css',
 })
 export class FormularioContatoComponent {
+  router = new Router();
   contatoForm: FormGroup;
 
   constructor() {
@@ -42,6 +44,6 @@ export class FormularioContatoComponent {
   }
 
   cancelar() {
-    console.log('Ação cancelada');
+    this.router.navigate(['/lista']);
   }
 }
